@@ -1,0 +1,8 @@
+------------------------------------------------------SCRIPTS DO WINDOWS-----------------------------------------------------------
+
+
+dir - comando para acessar pasta
+
+cd .. - para voltar uma pasta
+
+cd + nome da pasta - para acessar pasta especifica
