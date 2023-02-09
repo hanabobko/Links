@@ -1,0 +1,175 @@
+import React, {useState} from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import styled from 'styled-components/native';
+import { Button, Header } from 'react-native-elements';
+
+const schema = yup.object({
+  sinistro: yup.number().required("Informe o valor do sinistro"),
+  nomeloc: yup.string().required("Informe o nome completo do locatário"),
+  password: yup.string().min(8, "A senha deve ter no mínimo 8 dígitos").required("Informe sua senha")
+
+})
+
+function FormSinistro() {
+  const { control, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  })
+
+
+  function handleSignIn(data){
+    console.log(data);
+  }
+
+  return (
+    <Container>
+
+      <Texth1>Sinistro de Aluguel</Texth1>
+
+      <Controller
+        control={control}
+        name="valorsinistro"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder= "Insira o valor do sinistro"
+        />
+      )}
+    />
+    {errors.sinistro && <ContentText >{errors.sinistro?.message}</ContentText>}
+
+<Controller
+        control={control}
+        name="nomeloc"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder="Insira o nome do locatário"
+      />
+       )}
+    />
+    {errors.nomeloc && <ContentText>{errors.email?.nomeloc}</ContentText>}
+
+<Controller
+        control={control}
+        name="CPF"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder="Insira o CPF do locatário"
+      />
+       )}
+    />
+    {errors.password && <ContentText>{errors.password?.message}</ContentText>}
+
+    <Controller
+        control={control}
+        name="email"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder="Insira o e-mail do locatário"
+        />
+      )}
+    />
+
+<Controller
+        control={control}
+        name="numero"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder="Insira o telefone do locatário"
+        />
+      )}
+    />
+
+<Controller
+        control={control}
+        name="endereco"
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput 
+            onChangeText={onChange}
+            onBlur={onBlur} // chamado quando o text input é tocado
+            value={value}
+            placeholder="Insira o endereço do locatário"
+        />
+      )}
+    />
+      <TouchableOpacity  onPress={handleSubmit(handleSignIn)}>
+        <Texth2 >Próximo passo</Texth2>
+      </TouchableOpacity>
+    </Container>
+  );
+}
+<Container>
+<Input type="text" placeholder="Nome" />
+<Input type="email" placeholder="Email" />
+<Button type="submit">Próximo passo</Button>
+</Container>
+
+export default FormSinistro;
+
+
+export const Container = styled.View`
+    flex: 1;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+`;
+const Texth1 = styled.Text`
+    font-Size: 23;
+    margin-bottom: 34;
+    margin-right: 10;
+    color: #3393ff;
+    font-weight: bold;
+`;
+const Texth2 = styled.Text`
+    font-size: 15;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3393FF;
+`;
+const Input = styled.View`
+    width: 100%;
+    height: 40;
+    background-color: #E8EAEE;
+    margin-bottom: 5;
+    border-radius: 10;
+    border-width: 2;
+    border-color: #3393FF;
+    color: #000;
+    margin: 15;
+`;
+const button = styled.View`
+    width: 100%;
+    height: 40;
+    background-color: #3393FF;
+    border-radius: 4;
+    justify-content: center;
+    align-items: center;
+    margin: 40;
+`;
+const buttonText = styled.Text`
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 50;
+`;
+const labelError = styled.Text`
+    align-self: flex-start;
+    color: #ff0e0e;
+`;
+

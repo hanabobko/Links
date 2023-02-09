@@ -6,3 +6,17 @@ dir - comando para acessar pasta
 cd .. - para voltar uma pasta
 
 cd + nome da pasta - para acessar pasta especifica
+
+
+npx expo start - pra rodar o app no cell
+
+git reset --hard - zera o teu código
+
+git pull - baixa o projeto do github
+
+
+
+
+-----------------------------------------------PREPARANDO AMBIENTE REACT COM EXPO NO VSCODE---------------------------------------------
+
+npx expo start --offline --Comando para rodar o app offline

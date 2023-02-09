@@ -1,0 +1,49 @@
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 30,
+  },
+  title:{
+    fontSize: 23,
+    marginBottom: 34,
+    color: '#3393FF',
+    fontWeight: 'bold',
+    marginRight: 105,
+  },
+  input:{
+    width: '100%',
+    height: 40,
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 8,
+    marginBotton: 5,
+    borderRadius: 3,
+    borderWidth: 2,
+    borderColor: '#3393FF',
+    color: '#000',
+    margin:15,
+  },
+  button:{
+    width: '100%',
+    height: 40,
+    backgroundColor: '#3393FF',
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 40,
+  },
+  butonText:{
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    fontSize: 50,
+  },
+  labelError:{
+    alignSelf: 'flex-start',
+    color: '#FF375B',
+  },
+  Controller:{
+    margin: 20,cons
+  }
+});

@@ -1,3 +1,6 @@
 Links de idéias de design interativo p app
 
 https://lottiefiles.com/plugins/after-effects
+
+
+secureTextEntry={true} - oculta os caracteres da senha para 
